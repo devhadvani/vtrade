@@ -1,0 +1,3 @@
+venv
+.env
+frontend/vtrade/node_modules

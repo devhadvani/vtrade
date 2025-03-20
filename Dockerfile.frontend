@@ -1,0 +1,25 @@
+FROM node:18-slim AS build
+
+WORKDIR /app/vtrade
+
+# Set the Node.js memory limit
+ENV NODE_OPTIONS="--max-old-space-size=2048"
+
+# Copy and install dependencies
+COPY frontend/vtrade/package*.json ./
+RUN npm install
+
+# Save node_modules to a separate folder temporarily
+RUN cp -r node_modules /node_modules
+
+# Copy application files
+COPY frontend/vtrade/ /app/vtrade
+
+# Ensure node_modules is available
+RUN mkdir -p /app/node_modules && cp -r /node_modules/* /app/node_modules/
+
+# Expose the frontend port
+EXPOSE 5173
+
+# Start the frontend application
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "5173"]

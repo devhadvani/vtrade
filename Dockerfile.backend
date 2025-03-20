@@ -1,0 +1,18 @@
+FROM python:3.10
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the requirements file and install dependencies
+COPY backend/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the Django app code
+COPY backend/ /app/vtrade
+
+# Expose the port the app runs on
+EXPOSE 8000
+# CMD ["python", "-u","manage.py", "makemigrations"]
+# CMD ["python", "-u","manage.py", "migrate"]
+# # Run the Django development server
+# CMD ["python", "-u","manage.py", "runserver", "0.0.0.0:8000"]
