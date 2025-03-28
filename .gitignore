@@ -1,3 +1,10 @@
+*.pyc
+__pycache__/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
 venv
 .env
 frontend/vtrade/node_modules
