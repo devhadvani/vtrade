@@ -1,0 +1,49 @@
+<!-- templates/fyers_auth.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fyers API Authorization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .auth-container {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .auth-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .note {
+            color: #666;
+            font-style: italic;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fyers API Authorization</h1>
+    
+    <div class="auth-container">
+        <h2>Connect to Fyers API</h2>
+        <p>Click the button below to authorize this application to access Fyers API for stock prices.</p>
+        
+        <a href="{{ auth_url }}" class="auth-button">Authorize Fyers API</a>
+        
+        <p class="note">Note: This authorization is for administrative purposes only. Regular users will not need to authenticate with Fyers.</p>
+    </div>
+</body>
+</html>

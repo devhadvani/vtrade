@@ -1,0 +1,58 @@
+<!-- templates/fyers_callback.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fyers API Authorization Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .result-container {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .success {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .error {
+            color: #f44336;
+            font-weight: bold;
+        }
+        .home-button {
+            display: inline-block;
+            background-color: #2196F3;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fyers API Authorization Result</h1>
+    
+    <div class="result-container">
+        {% if success %}
+            <h2 class="success">Authorization Successful</h2>
+            <p>The application has been successfully authorized to access Fyers API.</p>
+            <p>You can now use the API to fetch stock prices.</p>
+        {% else %}
+            <h2 class="error">Authorization Failed</h2>
+            <p>There was an error authorizing the application:</p>
+            <p>{{ message }}</p>
+            <p>Please try again or contact support if the issue persists.</p>
+        {% endif %}
+        
+        <a href="/" class="home-button">Return to Home</a>
+    </div>
+</body>
+</html>
