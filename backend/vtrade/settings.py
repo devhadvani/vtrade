@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
+    'daphne',
     "corsheaders",
     'django.contrib.admin',
     'django.contrib.auth',
@@ -49,6 +50,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+
+    'channels',
     'app',
 ]
 
@@ -83,6 +86,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'vtrade.wsgi.application'
+ASGI_APPLICATION = 'vtrade.asgi.application'
 
 
 # Database
